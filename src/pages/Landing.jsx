@@ -44,10 +44,22 @@ const Landing = () => {
         </div>
       </div>
 
-      <div id="section" className="w-full flex items-center">
-        <QuoteForm />
-        <img src={hospital} alt="" className="w-[800px] h-auto" />
-      </div>
+      <div
+        id="features"
+        className="w-full flex flex-col items-center font-Poppins h-[900px] justify-center gap-40 bg-white text-black"
+      >
+        <h1 className="text-4xl">Benefits of HealGrimage</h1>
+        <div className="grid grid-cols-3 gap-20">
+          {features.map((feature, index) => (
+            <FeatureCard
+              image={feature.image}
+              name={feature.name}
+              key={index}
+              description={feature.description}
+            />
+          ))}
+        </div>
+      </div> 
 
       <div
         id="info"
@@ -75,14 +87,11 @@ const Landing = () => {
         </div>
       </div>
 
-      <div
-        id="features"
-        className="w-full flex flex-col items-center font-Poppins h-[1000px] justify-center gap-40 bg-white text-black"
-      >
-        <h1 className="text-3xl">Benefits of HealGrimage</h1>
-        <div className="grid grid-cols-3 gap-20">
-          {features.map((feature, index) => <FeatureCard image={feature.image} name={feature.name} key={index} description={feature.description}/>)}
-        </div>
+      
+
+      <div id="section" className="w-full flex items-center">
+        <QuoteForm />
+        <img src={hospital} alt="" className="w-[800px] h-auto" />
       </div>
     </div>
   );
